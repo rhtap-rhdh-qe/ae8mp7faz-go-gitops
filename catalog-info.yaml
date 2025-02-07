@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ae8mp7faz-go-gitops
+  description: This is GitOps manifest for ae8mp7faz-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=ae8mp7faz-go
+    backstage.io/kubernetes-id: ae8mp7faz-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ae8mp7faz-go   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ae8mp7faz-go
